@@ -10,7 +10,9 @@ jobs:
  
     steps:
     - uses: actions/checkout@v1
-    - name: Which Docker?
-      run: docker --version
+    - name: Env check?
+      run: env | sort
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - env:
+        docker_buildkit=1
