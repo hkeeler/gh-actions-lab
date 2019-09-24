@@ -19,4 +19,4 @@ jobs:
     - name: Build the Docker image
       run: env | sort && docker build . --file Dockerfile --tag docker.pkg.github.com/hkeeler/github-actions-lab/test1:latest
     - name: Publish Docker image
-      run docker push docker.pkg.github.com/hkeeler/github-actions-lab/test1:latest
+      run: docker push docker.pkg.github.com/hkeeler/github-actions-lab/test1:latest
