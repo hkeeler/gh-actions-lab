@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image CI!
 
 on:
   release:
@@ -12,6 +12,8 @@ jobs:
  
     steps:
     - uses: actions/checkout@v1
+    - name: Event Data
+      run: cat ${GITHUB_EVENT_PATH}
     - name: jq?
       run: jq --version
     - name: Env check?
