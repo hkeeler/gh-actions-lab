@@ -12,6 +12,8 @@ jobs:
  
     steps:
     - uses: actions/checkout@v1
+    - name: jq?
+      run: jq --version
     - name: Env check?
       run: env | sort
       env:
