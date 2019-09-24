@@ -12,10 +12,8 @@ jobs:
  
     steps:
     - uses: actions/checkout@v1
-    - name: Event Data
-      run: cat ${GITHUB_EVENT_PATH}
-    - name: jq?
-      run: jq --version
+    - name: TAG NAME
+      run: echo "TAG_NAME: $(cat ${GITHUB_EVENT_PATH} | jq '.release.tag_name')"
     - name: Env check?
       run: env | sort
       env:
