@@ -14,8 +14,8 @@ jobs:
       run: env | sort
       env:
         docker_buildkit: 1
-    #- name: Authenticate Github Docker Registry
-    #  run: docker login docker.pkg.github.com --username hkeeler
+    - name: Authenticate Github Docker Registry
+      run: docker login docker.pkg.github.com --username hkeeler --password ${{ secrets.GITHUB_TOKEN }}
     - name: Build the Docker image
       run: env | sort && docker build . --file Dockerfile --tag docker.pkg.github.com/hkeeler/github-actions-lab/test1:latest
     - name: Publish Docker image
