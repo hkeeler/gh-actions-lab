@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: TAG NAME
-      run: cat ${GITHUB_EVENT_PATH} | jq -r '.release.tag_name'
+      run: "cat ${GITHUB_EVENT_PATH} | jq -r '.release.tag_name'"
     - name: Env check?
       run: env | sort
     - name: Authenticate Github Docker Registry
